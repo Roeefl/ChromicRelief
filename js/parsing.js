@@ -21,7 +21,7 @@ var urlSpecs = 	{
           "parse-dirk":   {
                             "url": "http://www.dirksbigbunnies.com/",
                             "preStr": "",
-                            "imageElement": ".cartoon",
+                            "imageElement": ".cartoon:last",
                             "scaleImage": "scale(1)"                            
                           }
 				};
