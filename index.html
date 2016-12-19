@@ -1,32 +1,70 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="Get a quick spike of comic relief on Chrome without even having to leave your current tab, and get back to work.">
+    
     <!-- Title -->
     <title>Chromic Relief</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" />
     <link rel="stylesheet" type="text/css" href="/styles/site.css" />
 
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" />
+
     <!-- Scripts -->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- AngularJS -->
+    <script src="/js/angular.js"></script>
+    
+    <!-- Minified AngularJS for production -->
+    <!-- <script src="/js/angular.min.js"></script> -->
+    
     <script src="/js/jquery-3.1.1.min.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/reliefsController.js"></script>
+    <script src="/js/parsing.js"></script>
   </head>
-  <body>
-    <!-- Vue App -->
-    <div id="app">
-      <h1>{{ primary-title }}</h1>
-    </div>
 
-    <!-- The Main Grid -->
-    <div id="pure-button-grid" class="pure-g">
-        <div class="pure-u-1-5"><p>xkcd</p></div>
-        <div class="pure-u-1-5"><p>Poorly Drawn Lines</p></div>
-        <div class="pure-u-1-5"><p>Cyanide and Happiness</p></div>
-        <div class="pure-u-1-5"><p>Oatmeal</p></div>
-        <div class="pure-u-1-5"><p>Geek and Poke</p></div>
+  <body ng-app="chromicRelief" ng-controller="reliefsController">
+    <!-- layout -->
+    <div id="layout" class="pure-g">
+
+        <!-- sidebar -->
+        <div id="sidebar" class="pure-u-1">
+            <div class="pure-menu">                
+                <div class="pure-menu-heading">
+                    <h1 class="header-title">Filter</h1>
+                </div>
+                <ul class="pure-menu-list">
+                    <li ng-repeat="filter in filterList" id="{{filter.id}} class="pure-menu-item">
+                        <a href="#" class="pure-menu-link">{{filter.title}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /sidebar -->
+
+        <!-- content -->
+        <div id="content" class="pure-u-1">
+            <!-- The Main Selection Grid -->
+            <div id="pure-button-grid" class="pure-g">
+                <button ng-repeat="relief in reliefList" id={{relief.id}} class="iconic-button pure-button">
+                    <img width="64" height="64" alt={{relief.alt}} class="iconic-button-img" ng-src="images/grid/{{relief.src}}.png">
+                </button>
+            </div>
+
+            <div class='relief-container'>
+                <img src="" width="300px" height="300px">
+            </div>
+        </div>
+        <!-- /content -->
+    
     </div>
+    <!-- /layout -->
+
   </body>
 </html>
