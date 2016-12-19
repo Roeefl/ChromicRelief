@@ -1,13 +1,104 @@
+/*
+ * -- BASE STYLES --
+ */
 body {
   font-family: "Droid Sans Mono";
   font-size: 100%;
-  width: 400px;
-  height: 400px;
-  background-color: #BCC6CC;
+  width: 500px;
+  height: 500px;
+  background-color: #778899;
   color: #0C090A;
 }
 
-#pure-button-grid .pure-u-1-5 {
-  padding: 4px;
-  margin: 10px;
+a {
+    text-decoration: none;
+    color: #1b98f8;
+}
+
+/*
+ * -- LAYOUT STYLES --
+ */
+
+#layout, #sidebar, #content {
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    display: block;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    width: 150px;
+    height: 100%;
+    background-color: #252A3A;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    border-right: 2px solid #ddd;
+}
+
+/* Move the layout over so we can fit the sidebar on the left */
+#content {
+	position: relative;
+	display: block;
+    margin-left: 150px;
+    overflow: auto
+    width: 100%;
+    height: 100%;
+    background-color: #778899;
+    color: #fff;
+    text-align: center;
+}
+
+/*
+ * -- SIDEBAR STYLES --
+ */
+#sidebar .pure-menu {
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+
+#sidebar .pure-menu-item {
+	width: 90%;
+}
+
+#sidebar .pure-menu-link:hover,
+#sidebar .pure-menu-link:focus {
+    background: rgb(55, 60, 90);
+}
+
+#sidebar .pure-menu-link {
+    color: #fff;
+    margin-left: 0.5em;
+}
+
+#sidebar .pure-menu-heading {
+    border-bottom: none;
+    font-size:110%;
+    color: rgb(230, 230, 230);
+}
+
+/*
+ * -- CONTENT STYLES --
+ */
+ #pure-button-grid {
+ 	padding-top: 20px;
+ }
+
+.iconic-button {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #778899;
+    margin: 0.5em;
+    padding: 0.5em;
+    border-radius: 25px;
+}
+
+.relief-container {
+    margin-top: 40px;
 }

@@ -2,6 +2,7 @@
   "manifest_version": 2,
 
   "name": "ChromicRelief",
+  "short_name": "chrelief",
   "description": "Get a quick spike of comic relief on Chrome without even having to leave your current tab, and get back to work",
   "version": "0.1",
 
@@ -10,8 +11,22 @@
     "default_popup": "index.html",
     "default_title": "Chromic Relief"
   },
+
   "permissions": [
+    "tabs",
     "activeTab",
-    "https://ajax.googleapis.com/"
-  ]
+    "https://ajax.googleapis.com/",
+    "debugger",
+    "storage",
+    "http://xkcd.com/",
+    "http://www.xkcd.com/",
+    "http://explosm.net/",
+    "http://www.explosm.net/",
+    "http://poorlydrawnlines.com/",
+    "http://www.poorlydrawnlines.com/",
+    "http://dirksbigbunnies.com/",
+    "http://www.dirksbigbunnies.com/"
+  ],
+
+  "content_security_policy": "script-src 'self' http://xkcd.com/ http://www.xkcd.com/ http://explosm.net/ http://www.explosm.net/ http://poorlydrawnlines.com/ http://www.poorlydrawnlines.com/ http://dirksbigbunnies.com/ http://www.dirksbigbunnies.com/; object-src 'self'"
 }
