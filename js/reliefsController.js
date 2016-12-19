@@ -20,7 +20,52 @@ angular.module('chromicRelief.controllers', []).
           id: "parse-dirk",
           alt: "Dirks Big Bunnies",
           src: "dirks"
+        },
+        {
+          id: "parse-geekandpoke",
+          alt: "Geek and Poke",
+          src: "geekandpoke"
+        },
+        {
+          id: "parse-awkwardzombie",
+          alt: "Awkward Zombie",
+          src: "awkwardzombie"
+        },
+        {
+          id: "parse-smbc",
+          alt: "Saturday Morning Breakfast Cereal",
+          src: "smbc"
+        },
+        {
+          id: "parse-incidental",
+          alt: "Incidental Comics",
+          src: "incidental"
+        },
+        {
+          id: "parse-awkwardyeti",
+          alt: "The Awkward Yeti",
+          src: "awkwardyeti"
+        },
+        {
+          id: "parse-doghouse",
+          alt: "The Doghouse Diaries",
+          src: "doghouse"
+        },
+        {
+          id: "parse-dailykitten",
+          alt: "The Daily Kitten",
+          src: "dailykitten"
         }
+        // {
+        //   id: "parse-abtrusegoose",
+        //   alt: "Abtruse Goose",
+        //   src: "abtrusegoose"
+        // }
+        /* {
+          id: "parse-oatmeal",
+          alt: "The Oatmeal",
+          src: "oatmeal"
+        } */
       ];
 
       $scope.filterList = [
