@@ -52,7 +52,7 @@
         <div id="content" class="pure-u-1">
             <!-- The Main Selection Grid -->
             <div id="pure-button-grid" class="pure-g">
-                <button ng-repeat="relief in reliefList" id={{relief.id}} class="iconic-button pure-button">
+                <button ng-repeat="relief in reliefList" id={{relief.id}} class="iconic-button pure-button" title={{relief.alt}}>
                     <img width="64" height="64" alt={{relief.alt}} class="iconic-button-img" ng-src="images/grid/{{relief.src}}.png">
                 </button>
             </div>
