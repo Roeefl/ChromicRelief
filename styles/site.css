@@ -31,7 +31,7 @@ a {
     top: 0;
     bottom: 0;
     overflow: auto;
-    width: 150px;
+    width: 180px;
     height: 100%;
     background-color: #252A3A;
     color: #fff;
@@ -44,7 +44,7 @@ a {
 #content {
 	position: relative;
 	display: block;
-    margin-left: 150px;
+    margin-left: 180px;
     overflow: auto
     width: 100%;
     height: 100%;
@@ -62,24 +62,38 @@ a {
     text-align: left;
 }
 
-#sidebar .pure-menu-item {
-	width: 90%;
+#sidebar .pure-menu-link:hover {
+    background: rgb(55, 60, 90);
 }
 
-#sidebar .pure-menu-link:hover,
 #sidebar .pure-menu-link:focus {
-    background: rgb(55, 60, 90);
+    background: #848482;
 }
 
 #sidebar .pure-menu-link {
     color: #fff;
     margin-left: 0.5em;
+    width: 60%;
 }
 
 #sidebar .pure-menu-heading {
     border-bottom: none;
-    font-size:110%;
     color: rgb(230, 230, 230);
+    text-transform: capitalize;
+}
+
+.logo-icon, .header-title {
+    line-height: 16px;
+    padding: 0px;
+    margin: 0;
+}
+
+.header-title {
+    font-size: 110%;
+}
+
+.hr-header {
+    width: 80%;
 }
 
 /*
@@ -97,6 +111,13 @@ a {
     margin: 0.5em;
     padding: 0.5em;
     border-radius: 25px;
+    opacity: 0.75;
+}
+
+.iconic-button:hover, .iconic-button:active {
+    opacity: 1;
+    background-image:-webkit-linear-gradient(transparent,rgba(0,0,0,.0) 1000%,rgba(0,0,0,0));
+    background-image:linear-gradient(transparent,rgba(0,0,0,.0) 100%,rgba(0,0,0,0))
 }
 
 .relief-container {

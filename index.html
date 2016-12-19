@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html ng-app="chromicRelief" lang="en">
   <head>
 
     <!-- Meta -->
@@ -19,29 +19,38 @@
     <!-- Scripts -->
     <!-- AngularJS -->
     <script src="/js/angular.js"></script>
+    <script src="/js/angular-route.js"></script>
     
     <!-- Minified AngularJS for production -->
     <!-- <script src="/js/angular.min.js"></script> -->
-    
+    <!-- Minified Angular-Route for production -->
+    <!-- <script src="/js/angular-route.min.js"></script> -->
+
     <script src="/js/jquery-3.1.1.min.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/js/reliefsController.js"></script>
     <script src="/js/parsing.js"></script>
   </head>
 
-  <body ng-app="chromicRelief" ng-controller="reliefsController">
+  <body ng-controller="mainController">
+
     <!-- layout -->
     <div id="layout" class="pure-g">
 
         <!-- sidebar -->
         <div id="sidebar" class="pure-u-1">
             <div class="pure-menu">                
-                <div class="pure-menu-heading">
-                    <h1 class="header-title">Filter</h1>
+                <div class="pure-menu-heading pure-g">
+                    <div class="pure-u-1-5">
+                        <img width="16" height="16" alt="ChromicRelief" class="logo-icon" src="images/icon.png">
+                    </div>
+                    <div class="pure-u-4-5">
+                        <p class="header-title">ChromicRelief</p>
+                    </div>
                 </div>
+                <hr class="hr-header" />
                 <ul class="pure-menu-list">
                     <li ng-repeat="filter in filterList" id="{{filter.id}} class="pure-menu-item">
-                        <a href="#" class="pure-menu-link">{{filter.title}}</a>
+                        <a ng-click="filters.category = filter.categories" class="pure-menu-link">{{filter.title}}</a>
                     </li>
                 </ul>
             </div>
@@ -52,8 +61,8 @@
         <div id="content" class="pure-u-1">
             <!-- The Main Selection Grid -->
             <div id="pure-button-grid" class="pure-g">
-                <button ng-repeat="relief in reliefList" id={{relief.id}} class="iconic-button pure-button" title={{relief.alt}}>
-                    <img width="64" height="64" alt={{relief.alt}} class="iconic-button-img" ng-src="images/grid/{{relief.src}}.png">
+                <button ng-repeat="relief in reliefList | filter: filters | orderBy: 'alt' " id={{relief.id}} class="iconic-button pure-button" title={{relief.alt}}>
+                    <img width="48" height="48" alt={{relief.alt}} class="iconic-button-img" ng-src="images/grid/{{relief.src}}.png">
                 </button>
             </div>
 
