@@ -111,7 +111,7 @@
         <!-- content -->
         <div id="content" class="pure-u-1">  
             <!-- content-title -->
-            <h4 id="content-title">Web Comics</h4>
+            <p id="content-title">All</p>
             <!-- /content-title -->
 
             <!-- content-main: shown by default -->
@@ -128,11 +128,12 @@
                             relief does not allow access to random comic
                     -->
                     <button
-                        ng-repeat="relief in reliefList | filter: filters | orderBy: 'alt' "
-                        class="relief-button pure-button"
+                        ng-repeat="relief in reliefList | orderBy: 'alt' "
+                        class="relief-button pure-button hvr-glow"
                         id={{relief.id}}
                         title={{relief.alt}}
                         ng-click="setAllowRandom(relief.allowRandom)"
+                        ng-show="(filters.category ? filters.category == relief.category : true)"
                         ng-disabled="$storage.retrieveRandom ? {{!relief.allowRandom}} : false" >
                         <img
                             width="48"

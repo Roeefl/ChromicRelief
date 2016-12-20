@@ -149,9 +149,11 @@ $(document).ready( function() {
 
   $(".content-display").hide();
 
-	$(".relief-button").click(function() {
-    var settingRetrieveRandom = $("#cmn-toggle-1").is(':checked');
-    displayRelief(this.id, this.title, settingRetrieveRandom, xmlParseAttributes[this.id]['randomable']);
+	$(".relief-button").each(function(index) {
+    $(this).on('click', function() {
+      var settingRetrieveRandom = $("#cmn-toggle-1").is(':checked');
+      displayRelief(this.id, this.title, settingRetrieveRandom, xmlParseAttributes[this.id]['randomable']);
+    });
   });
 
   $("#back-to-grid").click(function() {
