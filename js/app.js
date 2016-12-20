@@ -1,6 +1,6 @@
-var mainApp = angular.module('chromicRelief', []);
+var chromicRelief = angular.module('chromicRelief', []);
 
-mainApp.config([
+chromicRelief.config([
   '$compileProvider',
   function ($compileProvider) {
       //  Default imgSrcSanitizationWhitelist: /^\s*((https?|ftp|file|blob):|data:image\/)/
@@ -9,7 +9,7 @@ mainApp.config([
   }
 ]);
 
-mainApp.controller('mainController', function($scope) {
+chromicRelief.controller('mainController', function($scope) {
       $scope.filters = { };
 
       $scope.reliefList = [
