@@ -10,6 +10,24 @@ chromicRelief.config([
 ]);
 
 chromicRelief.controller('mainController', function($scope) {
+
+      $scope.settings = { retrieve: "latest" };
+
+      $scope.displaySettings = { allowRandom: true };
+
+      $scope.toggleRetrieve = function toggleRetrieve( currentRetrieve) {
+        if ( angular.equals(currentRetrieve, 'latest')) {
+          $scope.settings.retrieve = 'random';
+        } else {
+          $scope.settings.retrieve = 'latest';
+        }
+        console.log($scope.settings.retrieve);
+      }
+
+      $scope.setAllowRandom = function setAllowRandom( allowRandom) {
+        $scope.displaySettings.allowRandom = allowRandom;
+      }
+
       $scope.filters = { };
 
       $scope.reliefList = [
@@ -17,67 +35,78 @@ chromicRelief.controller('mainController', function($scope) {
           id: "parse-xkcd",
           alt: "xkcd",
           src: "xkcd",
-          category: "comic"
+          category: "comic",
+          allowRandom: true
         },
         {
           id: "parse-explosm",
           alt: "Cyanide and Happiness",
           src: "explosm",
-          category: "comic"
+          category: "comic",
+          allowRandom: true
         },
         {
           id: "parse-poorly",
           alt: "Poorly Drawn Lines",
           src: "poorly_drawn_lines",
-          category: "comic"
+          category: "comic",
+          allowRandom: true
         },
         {
           id: "parse-dirk",
           alt: "Dirks Big Bunnies",
           src: "dirks",
-          category: "comic"
+          category: "comic",
+          allowRandom: false
         },
         {
           id: "parse-geekandpoke",
           alt: "Geek and Poke",
           src: "geekandpoke",
-          category: "comic"
+          category: "comic",
+          allowRandom: false
         },
         {
           id: "parse-awkwardzombie",
           alt: "Awkward Zombie",
           src: "awkwardzombie",
-          category: "comic"
+          category: "comic",
+          allowRandom: false
         },
         {
           id: "parse-smbc",
           alt: "Saturday Morning Breakfast Cereal",
           src: "smbc",
-          category: "comic"
+          category: "comic",
+          allowRandom: true
         },
         {
           id: "parse-incidental",
           alt: "Incidental Comics",
           src: "incidental",
-          category: "comic"
+          category: "comic",
+          allowRandom: false
         },
         {
           id: "parse-awkwardyeti",
           alt: "The Awkward Yeti",
           src: "awkwardyeti",
-          category: "comic"
+          category: "comic",
+          allowRandom: true
         },
         {
           id: "parse-doghouse",
           alt: "The Doghouse Diaries",
           src: "doghouse",
-          category: "comic"
+          category: "comic",
+          allowRandom: false
         },
         {
           id: "parse-dailykitten",
           alt: "The Daily Kitten",
           src: "dailykitten",
-          category: "animalgif"
+          category: "animalgif",
+          allowRandom: false
         }
         // {
         //   id: "parse-abtrusegoose",

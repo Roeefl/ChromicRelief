@@ -11,14 +11,30 @@
     "default_popup": "index.html",
     "default_title": "Chromic Relief"
   },
-  
+
+  // "commands": {
+  //   "escape-view": {
+  //     "suggested_key": {
+  //       "default": "Esc",
+  //       "mac": "Esc"
+  //     },
+  //     "description": "Go one view back in the extention instead of closing it.",
+  //     "global": true
+  //   }
+  // },
+
   "permissions": [
     "tabs",
     "activeTab",
     "https://ajax.googleapis.com/",
     "debugger",
     "storage",
+    "cookies",
+    "unlimitedStorage",
+    "http://fonts.googleapis.com/",
+    "https://fonts.googleapis.com/",
     "http://xkcd.com/",
+    "http://c.xkcd.com/",
     "http://www.xkcd.com/",
     "http://explosm.net/",
     "http://www.explosm.net/",
@@ -46,5 +62,5 @@
     "http://www.dailykitten.com/"
   ],
 
-  "content_security_policy": "script-src 'self' http://xkcd.com/ http://www.xkcd.com/ http://explosm.net/ http://www.explosm.net/ http://poorlydrawnlines.com/ http://www.poorlydrawnlines.com/ http://dirksbigbunnies.com/ http://www.dirksbigbunnies.com/ http://theoatmeal.com/ http://www.theoatmeal.com/ http://geek-and-poke.com/ http://www.geek-and-poke.com/ http://www.awkwardzombie.com/ http://awkwardzombie.com/ http://www.smbc-comics.com/ http://smbc-comics.com/ http://www.incidentalcomics.com/ http://incidentalcomics.com/ http://theawkwardyeti.com/ http://www.theawkwardyeti.com/ http://www.thedoghousediaries.com/ http://thedoghousediaries.com/ http://abstrusegoose.com/ http://www.abstrusegoose.com/ http://dailykitten.com/ http://www.dailykitten.com/; object-src 'self'"
+  "content_security_policy": "script-src 'self' http://xkcd.com/ http://www.xkcd.com/ http://c.xkcd.com/ http://explosm.net/ http://www.explosm.net/ http://poorlydrawnlines.com/ http://www.poorlydrawnlines.com/ http://dirksbigbunnies.com/ http://www.dirksbigbunnies.com/ http://theoatmeal.com/ http://www.theoatmeal.com/ http://geek-and-poke.com/ http://www.geek-and-poke.com/ http://www.awkwardzombie.com/ http://awkwardzombie.com/ http://www.smbc-comics.com/ http://smbc-comics.com/ http://www.incidentalcomics.com/ http://incidentalcomics.com/ http://theawkwardyeti.com/ http://www.theawkwardyeti.com/ http://www.thedoghousediaries.com/ http://thedoghousediaries.com/ http://abstrusegoose.com/ http://www.abstrusegoose.com/ http://dailykitten.com/ http://www.dailykitten.com/; object-src 'self'"
 }

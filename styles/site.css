@@ -2,7 +2,7 @@
  * -- BASE STYLES --
  */
 body {
-  font-family: "Droid Sans Mono";
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 100%;
   width: 500px;
   height: 500px;
@@ -53,6 +53,10 @@ a {
     text-align: center;
 }
 
+#content-title {
+  cursor: default;
+}
+
 /*
  * -- SIDEBAR STYLES --
  */
@@ -74,12 +78,14 @@ a {
     color: #fff;
     margin-left: 0.5em;
     width: 60%;
+    cursor: pointer;
 }
 
 #sidebar .pure-menu-heading {
     border-bottom: none;
     color: rgb(230, 230, 230);
     text-transform: capitalize;
+    cursor: default;
 }
 
 .logo-icon, .header-title {
@@ -92,10 +98,9 @@ a {
     font-size: 110%;
 }
 
-.hr-header {
+.hr-sidebar {
     width: 80%;
 }
-
 /*
  * -- CONTENT STYLES --
  */
@@ -145,15 +150,15 @@ a {
     background: rgb(66, 184, 221); /* this is a light blue */
 }
 
-#back-to-grid {
+.modal-button {
     margin-top: 1em;
 }
 
 #thumbnail {
-    width: 100%;
-    max-width: 300px;
-    height: 100%;
-    max-height: 350px;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 250px;
+    max-height: 250px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -229,3 +234,66 @@ a {
     cursor: pointer;
 }
 
+.fa {
+    margin-right: 8px;
+}
+
+.settings {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+}
+
+.setting-row {
+    padding: 1em;
+    cursor: pointer;
+}
+
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input.cmn-toggle-round + label {
+  padding: 2px;
+  width: 30px;
+  height: 15px;
+  background-color: #dddddd;
+  border-radius: 60px;
+}
+input.cmn-toggle-round + label:before,
+input.cmn-toggle-round + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+input.cmn-toggle-round + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  border-radius: 60px;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round + label:after {
+  width: 14px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: margin 0.4s;
+}
+input.cmn-toggle-round:checked + label:before {
+  background-color: #8ce196;
+}
+input.cmn-toggle-round:checked + label:after {
+  margin-left: 15px;
+}

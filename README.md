@@ -1,6 +1,15 @@
-<h1><a href=''>ChromicRelief</a></h1>
-<h2>Get a quick spike of comic relief on Chrome without even having to leave your current tab, and get back to work</h2>
-<h3>a Google Chrome Extension aimed at keeping developers from going insane while working long days and nights.</h3>
+<h1>
+	<a href=''>
+		ChromicRelief
+	</a>
+</h1>
+
+<h2>
+	Get a quick spike of comic relief on Chrome without even having to leave your current tab, and get back to work
+</h2>
+<h3>
+	a Google Chrome Extension aimed at keeping developers from going insane while working long days and nights
+</h3>
 
 <ul>
     <li>
@@ -11,6 +20,18 @@
     </li>
     <li>
     	<p>Clear, clean code with minimal comments</p>
+	</li>
+</ul>
+
+<h3>
+	Credits:
+</h3>
+<ul>
+	<li>
+		<p><a href='http://iconscout.com'>Iconscout</a> for the extension icon</p>
+	</li>
+	<li>
+		<p><a href='http://loading.io'>loading.io</a> for the loading screen gif</p>
 	</li>
 </ul>
 

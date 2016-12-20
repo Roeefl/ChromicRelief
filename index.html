@@ -17,7 +17,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" />
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" type="text/css">
 
     <!-- Scripts -->
     <!-- AngularJS -->
@@ -32,6 +32,7 @@
     <script src="/js/jquery-3.1.1.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/parsing.js"></script>
+    <script src="/js/xmlParseAttributes.js"></script>
   </head>
 
   <body ng-controller="mainController">
@@ -50,12 +51,27 @@
                         <p class="header-title">ChromicRelief</p>
                     </div>
                 </div>
-                <hr class="hr-header" />
+                <hr class="hr-sidebar hr-header" />
                 <ul class="pure-menu-list">
                     <li ng-repeat="filter in filterList" id="{{filter.id}} class="pure-menu-item">
                         <a ng-click="filters.category = filter.categories" class="pure-menu-link">{{filter.title}}</a>
                     </li>
-                </ul>
+                </ul> 
+                <div class="settings">
+                    <hr class="hr-sidebar hr-settings" />
+                    <div class="pure-menu-heading">
+                        <p class="header-title"><i class="fa fa-cog"></i>Settings</p>
+                    </div>
+                    <div class="setting-row">
+                      <div class="question">
+                        Grab random comic instead of most recent?
+                      </div>
+                      <div class="switch">
+                        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-checked="false" ng-click="toggleRetrieve(settings.retrieve)">
+                        <label for="cmn-toggle-1"></label>
+                      </div>
+                    </div><!-- /row -->
+                </div> 
             </div>
         </div>
         <!-- /sidebar -->
@@ -66,13 +82,13 @@
 
             <!-- The Main Selection Grid -->
             <div id="pure-button-grid" class="pure-g">
-                <button ng-repeat="relief in reliefList | filter: filters | orderBy: 'alt' " id={{relief.id}} class="iconic-button pure-button" title={{relief.alt}}>
+                <button ng-repeat="relief in reliefList | filter: filters | orderBy: 'alt' " id={{relief.id}} class="iconic-button pure-button" title={{relief.alt}} ng-click="setAllowRandom(relief.allowRandom)">
                     <img width="48" height="48" alt={{relief.alt}} class="iconic-button-img" ng-src="images/grid/{{relief.src}}.png">
                 </button>
             </div>
 
-            <div class='relief-container'>
-                <img id="thumbnail" src="" alt="" />
+            <div class="display" data-displayed-id="">
+                <img id="thumbnail" src="images/gear.svg" width="200px" height="200px" alt="" />
                 <div id="modal">
                     <button class="pure-button button-success" id="closeModal">
                         <i class="fa fa-window-close"></i> Close
@@ -82,9 +98,13 @@
                      <!-- Modal Content (The Image) -->
                     <img class="modal-content" id="overlay">
                 </div>
-                <button class="pure-button button-success" id="back-to-grid">
+                <button class="pure-button button-success modal-button" id="back-to-grid">
                     <i class="fa fa-backward"></i>
                     Back to Grid
+                </button>
+                <button ng-show="displaySettings.allowRandom" class="pure-button button-secondary modal-button" id="retrieve-random">
+                    <i class="fa fa-cube"></i>
+                    Random Comic
                 </button>
             </div>
         </div>
