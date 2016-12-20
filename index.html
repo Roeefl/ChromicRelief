@@ -23,6 +23,7 @@
     <!-- AngularJS -->
     <script src="/js/angular.js"></script>
     <script src="/js/angular-route.js"></script>
+    <script src="/js/ngStorage.min.js"></script>
     
     <!-- Minified AngularJS for production -->
     <!-- <script src="/js/angular.min.js"></script> -->
@@ -35,62 +36,139 @@
     <script src="/js/xmlParseAttributes.js"></script>
   </head>
 
+  <!-- body -->
   <body ng-controller="mainController">
 
-    <!-- layout -->
+    <!-- layout: main pureCSS grid divided into sidebar and content -->
     <div id="layout" class="pure-g">
 
         <!-- sidebar -->
         <div id="sidebar" class="pure-u-1">
-            <div class="pure-menu">                
-                <div class="pure-menu-heading pure-g">
+
+            <!-- filters-menu -->
+            <div class="pure-menu filters-menu">  
+                <!-- filters-heading -->              
+                <div class="pure-g pure-menu-heading filters-heading">
                     <div class="pure-u-1-5">
-                        <img width="16" height="16" alt="ChromicRelief" class="logo-icon" src="images/icon.png">
+                        <img width="16" height="16" alt="ChromicRelief" class="header-icon" src="images/icon.png">
                     </div>
-                    <div class="pure-u-4-5">
-                        <p class="header-title">ChromicRelief</p>
+                    <div class="pure-u-4-5 header-title">
+                        ChromicRelief
                     </div>
                 </div>
-                <hr class="hr-sidebar hr-header" />
-                <ul class="pure-menu-list">
-                    <li ng-repeat="filter in filterList" id="{{filter.id}} class="pure-menu-item">
-                        <a ng-click="filters.category = filter.categories" class="pure-menu-link">{{filter.title}}</a>
+                <!-- /filters-heading --> 
+
+                <hr class="hr-sidebar hr-filters" />
+
+                <!-- filters-list -->
+                <ul class="pure-menu-list filters-list">
+                    <li ng-repeat="filter in filterList" id="{{filter.id}}" class="pure-menu-item filter-item">
+                        <a ng-click="filters.category = filter.categories" class="pure-menu-link">
+                            {{filter.title}}
+                        </a>
                     </li>
                 </ul> 
-                <div class="settings">
-                    <hr class="hr-sidebar hr-settings" />
-                    <div class="pure-menu-heading">
-                        <p class="header-title"><i class="fa fa-cog"></i>Settings</p>
-                    </div>
-                    <div class="setting-row">
-                      <div class="question">
-                        Grab random comic instead of most recent?
-                      </div>
-                      <div class="switch">
-                        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-checked="false" ng-click="toggleRetrieve(settings.retrieve)">
-                        <label for="cmn-toggle-1"></label>
-                      </div>
-                    </div><!-- /row -->
-                </div> 
+                <!-- /filters-list -->
             </div>
+            <!-- /filters-menu -->
+
+            <!-- settings-menu -->
+            <div class="pure-menu settings-menu"> 
+                <!-- settings-heading -->
+                <div class="pure-menu-heading settings-heading">
+                    <div class="header-title">
+                        <i class="fa fa-cog"></i> Settings
+                    </div>
+                </div>
+                <!-- /settings-heading -->
+
+                <hr class="hr-sidebar hr-settings" />
+
+                <!-- settings-list -->
+                <ul class="pure-menu-list settings-list">
+                    <li ng-repeat="setting in settingList" class="pure-menu-item setting-item">
+                      <div class="switch">
+                      <input
+                        ng-model="$storage.retrieveRandom"
+                        type="{{setting.type}}"
+                        id="{{setting.id}}"
+                        class="{{setting.class}}"
+                        title="{{setting.title}}" > 
+                        <label for="{{setting.id}}"></label>
+                      </div>
+                      <div class="setting-desc">
+                        {{setting.desc}}
+                      </div>
+                    </li>
+                </ul>
+                <!-- /settings-list -->
+            </div>
+            <!-- /settings-menu -->
+
         </div>
         <!-- /sidebar -->
 
         <!-- content -->
         <div id="content" class="pure-u-1">  
-            <h2 id="content-title">Web Comics</h2>
+            <!-- content-title -->
+            <h4 id="content-title">Web Comics</h4>
+            <!-- /content-title -->
 
-            <!-- The Main Selection Grid -->
-            <div id="pure-button-grid" class="pure-g">
-                <button ng-repeat="relief in reliefList | filter: filters | orderBy: 'alt' " id={{relief.id}} class="iconic-button pure-button" title={{relief.alt}} ng-click="setAllowRandom(relief.allowRandom)">
-                    <img width="48" height="48" alt={{relief.alt}} class="iconic-button-img" ng-src="images/grid/{{relief.src}}.png">
-                </button>
+            <!-- content-main: shown by default -->
+            <div class="content-main">
+
+                <!-- grid: the main relief selection grid -->
+                <div id="pure-button-grid" class="grid pure-g">
+
+                    <!-- each button in the grid is structured as follows:
+                        -   the reliefs are filtered by $scope.filters
+                        -   clicking a relief will change $scope.displaySettings according to whether the relief
+                            allows random http access, etc
+                        -   a relief will be disabled if the user chose to get random comics on settings and the
+                            relief does not allow access to random comic
+                    -->
+                    <button
+                        ng-repeat="relief in reliefList | filter: filters | orderBy: 'alt' "
+                        class="relief-button pure-button"
+                        id={{relief.id}}
+                        title={{relief.alt}}
+                        ng-click="setAllowRandom(relief.allowRandom)"
+                        ng-disabled="$storage.retrieveRandom ? {{!relief.allowRandom}} : false" >
+                        <img
+                            width="48"
+                            height="48"
+                            alt={{relief.alt}}
+                            class="relief-button-img"
+                            ng-src="images/grid/{{relief.src}}.png" >
+                    </button>   
+
+                </div>
+                <!-- /grid -->
+
+                <!-- grid-extras -->
+                <div class="grid-extras">
+                    <button
+                        class="pure-button button-hitme"
+                        id="hit-me" >
+                        <i class="fa fa-cubes"></i> Hit Me
+                    </button>
+                </div>
+                <!-- /grid-extras -->
             </div>
+            <!-- /content-main -->
 
-            <div class="display" data-displayed-id="">
-                <img id="thumbnail" src="images/gear.svg" width="200px" height="200px" alt="" />
-                <div id="modal">
-                    <button class="pure-button button-success" id="closeModal">
+            <!-- display: hidden by default -->
+            <div class="content-display" data-displayed-id="">
+
+                <!-- display-thumbnail -->
+                <div class="display-thumbnail">
+                    <img id="thumbnail" src="images/gear.svg" width="200px" height="200px" alt="" />
+                </div>
+                <!-- /display-thumbnail -->
+                
+                <!-- display-modal -->
+                <div id="display-modal">
+                    <button class="pure-button button-success" id="modal-close">
                         <i class="fa fa-window-close"></i> Close
                     </button>
                     <!-- Modal Caption (Image Text) -->
@@ -98,15 +176,24 @@
                      <!-- Modal Content (The Image) -->
                     <img class="modal-content" id="overlay">
                 </div>
-                <button class="pure-button button-success modal-button" id="back-to-grid">
-                    <i class="fa fa-backward"></i>
-                    Back to Grid
-                </button>
-                <button ng-show="displaySettings.allowRandom" class="pure-button button-secondary modal-button" id="retrieve-random">
-                    <i class="fa fa-cube"></i>
-                    Random Comic
-                </button>
+                <!-- /display-modal -->
+
+                <!-- display-buttons -->
+                <div class="display-buttons">
+                    <button class="pure-button button-success display-button" id="back-to-grid">
+                        <i class="fa fa-backward"></i> Back to Grid
+                    </button>
+                    <button
+                        class="pure-button button-secondary display-button"
+                        id="retrieve-random" >
+                        <i class="fa fa-cube"></i> Random Comic
+                    </button>
+                </div>
+                <!-- /display-buttons -->
+
             </div>
+            <!-- /display -->
+
         </div>
         <!-- /content -->
     
@@ -114,4 +201,5 @@
     <!-- /layout -->
 
   </body>
+  <!-- /body -->
 </html>

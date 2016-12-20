@@ -57,6 +57,7 @@ a {
   cursor: default;
 }
 
+
 /*
  * -- SIDEBAR STYLES --
  */
@@ -81,26 +82,23 @@ a {
     cursor: pointer;
 }
 
-#sidebar .pure-menu-heading {
+.pure-menu-heading {
     border-bottom: none;
     color: rgb(230, 230, 230);
     text-transform: capitalize;
     cursor: default;
 }
 
-.logo-icon, .header-title {
+.header-icon, .header-title {
     line-height: 16px;
     padding: 0px;
     margin: 0;
 }
 
-.header-title {
-    font-size: 110%;
+.hr-sidebar {
+    width: 8em;
 }
 
-.hr-sidebar {
-    width: 80%;
-}
 /*
  * -- CONTENT STYLES --
  */
@@ -108,7 +106,7 @@ a {
  	padding-top: 20px;
  }
 
-.iconic-button {
+.relief-button {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -119,16 +117,20 @@ a {
     opacity: 1;
 }
 
-.iconic-button:hover, .iconic-button:active {
+.relief-button:hover, .relief-button:active {
     opacity: 1;
     background-image:-webkit-linear-gradient(transparent,rgba(0,0,0,.0) 1000%,rgba(0,0,0,0));
     background-image:linear-gradient(transparent,rgba(0,0,0,.0) 100%,rgba(0,0,0,0))
 }
 
+/*
+* -- DISPLAY PANEL STYLES --
+*/
 .button-success,
 .button-error,
 .button-warning,
-.button-secondary {
+.button-secondary,
+.button-hitme {
     color: white;
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -150,15 +152,23 @@ a {
     background: rgb(66, 184, 221); /* this is a light blue */
 }
 
-.modal-button {
+.button-hitme {
+  background-color: #BE1931;
+}
+
+/*
+* -- COMIC MODAL AND THUMBNAIL STYLES --
+*/
+
+.display-button {
     margin-top: 1em;
 }
 
 #thumbnail {
     min-width: 200px;
     min-height: 200px;
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 200px;
+    max-height: 200px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -168,7 +178,7 @@ a {
 }
 
 /* The Modal (background) */
-#modal {
+#display-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -218,7 +228,7 @@ a {
 }
 
 /* The Close Button */
-#closeModal {
+#modal-close {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -227,26 +237,38 @@ a {
     font-size: 80%;
 }
 
-#closeModal:hover,
-#closeModal:focus {
+#modal-close:hover,
+#modal-close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+/* ORGANIZE THIS */
+
+.display-buttons, .grid-extras {
+  margin-top: 40px;
 }
 
 .fa {
     margin-right: 8px;
 }
 
-.settings {
+.settings-menu {
     position: absolute;
-    bottom: 100px;
+    bottom: 30px;
     left: 0;
 }
 
-.setting-row {
-    padding: 1em;
-    cursor: pointer;
+.setting-item {
+  padding: 1em;
+  cursor: pointer;
+}
+
+.setting-desc {
+  font-size: 80%;
+  margin-top: 4px;
 }
 
 .cmn-toggle {

@@ -16,7 +16,7 @@
         <p>Lightweight, minimal extension</p>
     </li>
     <li>
-        <p>Developed using <a href='https://angular.io/'>AngularJS</a> and <a href='http://purecss.io/'>PureCSS</a></p>
+        <p>Developed using <a href='https://angular.io/' target="_blank">AngularJS</a> and <a href='http://purecss.io/' target="_blank">PureCSS</a></p>
     </li>
     <li>
     	<p>Clear, clean code with minimal comments</p>
@@ -28,10 +28,13 @@
 </h3>
 <ul>
 	<li>
-		<p><a href='http://iconscout.com'>Iconscout</a> for the extension icon</p>
+		<p><a href='http://iconscout.com' target="_blank">Iconscout</a> for the extension icon</p>
 	</li>
 	<li>
-		<p><a href='http://loading.io'>loading.io</a> for the loading screen gif</p>
+		<p><a href='http://loading.io' target="_blank">loading.io</a> for the loading screen gif</p>
+	</li>
+	<li>
+		<p><a href='https://github.com/gsklee/ngStorage/' target="_blank">ngStorage</a> for local storage</p>
 	</li>
 </ul>
 
