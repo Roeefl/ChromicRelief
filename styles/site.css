@@ -110,8 +110,8 @@ a {
     background-color: #778899;
     margin: 0.5em;
     padding: 0.5em;
-    border-radius: 25px;
-    opacity: 0.75;
+    border-radius: 10px;
+    opacity: 1;
 }
 
 .iconic-button:hover, .iconic-button:active {
@@ -120,6 +120,112 @@ a {
     background-image:linear-gradient(transparent,rgba(0,0,0,.0) 100%,rgba(0,0,0,0))
 }
 
-.relief-container {
-    margin-top: 40px;
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
+
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+    background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+#back-to-grid {
+    margin-top: 1em;
+}
+
+#thumbnail {
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 350px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#thumbnail:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 30px 0;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { 
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+#closeModal {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 80%;
+}
+
+#closeModal:hover,
+#closeModal:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+

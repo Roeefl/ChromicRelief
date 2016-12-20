@@ -10,8 +10,11 @@
     <title>Chromic Relief</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/styles/site.css" />
+
+    <!-- Font-AWesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" />
@@ -58,7 +61,9 @@
         <!-- /sidebar -->
 
         <!-- content -->
-        <div id="content" class="pure-u-1">
+        <div id="content" class="pure-u-1">  
+            <h2 id="content-title">Web Comics</h2>
+
             <!-- The Main Selection Grid -->
             <div id="pure-button-grid" class="pure-g">
                 <button ng-repeat="relief in reliefList | filter: filters | orderBy: 'alt' " id={{relief.id}} class="iconic-button pure-button" title={{relief.alt}}>
@@ -67,7 +72,20 @@
             </div>
 
             <div class='relief-container'>
-                <img src="" width="300px" height="300px">
+                <img id="thumbnail" src="" alt="" />
+                <div id="modal">
+                    <button class="pure-button button-success" id="closeModal">
+                        <i class="fa fa-window-close"></i> Close
+                    </button>
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="caption"></div>
+                     <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="overlay">
+                </div>
+                <button class="pure-button button-success" id="back-to-grid">
+                    <i class="fa fa-backward"></i>
+                    Back to Grid
+                </button>
             </div>
         </div>
         <!-- /content -->

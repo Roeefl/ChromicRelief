@@ -64,9 +64,7 @@ var urlSpecs = 	{
             "url": "http://dailykitten.com/",
             "preStr": "",
             "imageElement": ".wp-post-image:first",
-            "scaleImage": "scale(1)"     
-
-
+            "scaleImage": "scale(1)"
           }
           // "parse-abtrusegoose":   {
           //                   "url": "http://abstrusegoose.com/",
@@ -82,7 +80,7 @@ var urlSpecs = 	{
           // }
 				};
 
-function comicParser(urlSpec) {
+function comicParser(urlSpec, ngTitle) {
   // Init new XHR object to get data from webpage
   var xhr = new XMLHttpRequest();
 
@@ -98,10 +96,15 @@ function comicParser(urlSpec) {
   			fullSrc = urlSpec["preStr"] + imageSrc;
         console.log('@parsing.js @comicParser > fullSrc: ' + fullSrc);
 
-				$(".relief-container img").fadeOut(200, function() {
+				$(".relief-container #thumbnail").fadeOut(200, function() {
       		$(this).attr('src', fullSrc);
-      		$(".relief-container img").css("transform", urlSpec["scaleImage"]);
+          $(this).attr('alt', ngTitle);
+      		$(".relief-container #thumbnail").css("transform", urlSpec["scaleImage"]);
     		}).fadeIn(200);
+
+        $("#pure-button-grid").hide();
+        $(".relief-container").show();
+        $("#content-title").text(ngTitle);
   		}
 	}
 
@@ -111,7 +114,36 @@ function comicParser(urlSpec) {
 }
 
 $(document).ready( function() {
+  $(".relief-container").hide();
+
 	$(".iconic-button").click(function() {
-    comicParser(urlSpecs[this.id]);
+    comicParser(urlSpecs[this.id], this.title);
   });
+
+  $("#back-to-grid").click(function() {
+      $(".relief-container").hide();
+      $("#pure-button-grid").show();
+      $("#content-title").text('All');
+  });
+  
+  var thumbnail = document.getElementById('thumbnail');
+
+  thumbnail.onclick = function(){
+    var modal = document.getElementById('modal');
+    var overlay = document.getElementById("overlay");
+    var caption = document.getElementById("caption");
+
+    modal.style.display = "block";
+    overlay.src = this.src;
+    caption.innerHTML = this.alt;
+  }
+
+  // Get the <span> element that closes the modal
+  var closeModal = document.getElementById('closeModal');
+
+  // When the user clicks on <span> (x), close the modal
+  closeModal.onclick = function() { 
+    var modal = document.getElementById('modal');
+    modal.style.display = "none";
+  }
 });
