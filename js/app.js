@@ -98,6 +98,13 @@ chromicRelief.controller('mainController', function( $scope, $localStorage, $ses
         src: "dailykitten",
         category: "animalgif",
         allowRandom: false
+      },
+      {
+        id: "parse-thecatapi",
+        alt: "Where everyday is Caturday",
+        src: "thecatapi",
+        category: "animalgif",
+        allowRandom: true
       }
       // {
       //   id: "parse-abtrusegoose",

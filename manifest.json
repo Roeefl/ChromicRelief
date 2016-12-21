@@ -59,8 +59,10 @@
     "http://abstrusegoose.com/",
     "http://www.abstrusegoose.com/",
     "http://dailykitten.com/",
-    "http://www.dailykitten.com/"
+    "http://www.dailykitten.com/",
+    "http://thecatapi.com/",
+    "http://www.thecatapi.com/"
   ],
 
-  "content_security_policy": "script-src 'self' http://xkcd.com/ http://www.xkcd.com/ http://c.xkcd.com/ http://explosm.net/ http://www.explosm.net/ http://poorlydrawnlines.com/ http://www.poorlydrawnlines.com/ http://dirksbigbunnies.com/ http://www.dirksbigbunnies.com/ http://theoatmeal.com/ http://www.theoatmeal.com/ http://geek-and-poke.com/ http://www.geek-and-poke.com/ http://www.awkwardzombie.com/ http://awkwardzombie.com/ http://www.smbc-comics.com/ http://smbc-comics.com/ http://www.incidentalcomics.com/ http://incidentalcomics.com/ http://theawkwardyeti.com/ http://www.theawkwardyeti.com/ http://www.thedoghousediaries.com/ http://thedoghousediaries.com/ http://abstrusegoose.com/ http://www.abstrusegoose.com/ http://dailykitten.com/ http://www.dailykitten.com/; object-src 'self'"
+  "content_security_policy": "script-src 'self' http://xkcd.com/ http://www.xkcd.com/ http://c.xkcd.com/ http://explosm.net/ http://www.explosm.net/ http://poorlydrawnlines.com/ http://www.poorlydrawnlines.com/ http://dirksbigbunnies.com/ http://www.dirksbigbunnies.com/ http://theoatmeal.com/ http://www.theoatmeal.com/ http://geek-and-poke.com/ http://www.geek-and-poke.com/ http://www.awkwardzombie.com/ http://awkwardzombie.com/ http://www.smbc-comics.com/ http://smbc-comics.com/ http://www.incidentalcomics.com/ http://incidentalcomics.com/ http://theawkwardyeti.com/ http://www.theawkwardyeti.com/ http://www.thedoghousediaries.com/ http://thedoghousediaries.com/ http://abstrusegoose.com/ http://www.abstrusegoose.com/ http://dailykitten.com/ http://www.dailykitten.com/ http://thecatapi.com/ http://www.thecatapi.com/; object-src 'self'"
 }

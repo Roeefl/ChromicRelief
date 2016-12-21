@@ -15,8 +15,7 @@ var xmlParseAttributes =
     "randomUrl": "http://explosm.net/comics/random/",
     "preStr": "http:",
     "imgElement": "#featured-comic",
-    "randomImgElement": "#main-comic",
-    "scaleImage": "scale(1)"
+    "randomImgElement": "#main-comic"
   },
   "parse-poorly": {
     "randomable": true,
@@ -76,19 +75,24 @@ var xmlParseAttributes =
     "randomable": false,
     "url": "http://dailykitten.com/",
     "preStr": "",
-    "imgElement": ".wp-post-image:first",
-    "scaleImage": "scale(1)"
+    "imgElement": ".wp-post-image:first"
+  },
+  "parse-thecatapi": {
+    "randomable": true,
+    "url": "http://thecatapi.com/",
+    "randomUrl": "http://thecatapi.com/",
+    "preStr": "",
+    "imgElement": "#main_event",
+    "randomImgElement": "#main_event"
   }
   // "parse-abtrusegoose":   {
   //                   "url": "http://abstrusegoose.com/",
   //                   "preStr": "",
-  //                   "imgElement": "section",
-  //                   "scaleImage": "scale(1)"                            
+  //                   "imgElement": "section"                         
   // }
   // "parse-oatmeal": {
   //                   "url": "http://theoatmeal.com/feed/random/",
   //                   "preStr": "",
-  //                   "imgElement": ".ghost img",
-  //                   "scaleImage": "scale(1)"             
+  //                   "imgElement": ".ghost img"         
   // }
 };

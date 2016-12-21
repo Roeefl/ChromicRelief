@@ -1,3 +1,6 @@
+/* GLOBAL */
+var catApiSrc = 'http://thecatapi.com/api/images/get?format=src&type=gif';
+
 /*
   This function loads the image from imgSrc into the thumbnail img in the display frame,
   Also sets the title to comicTitle
@@ -73,28 +76,47 @@ function parseComic(urlSpec, comicTitle, getRandom, fadeMS) {
 }
 
 /*
-  UI transitions to show the main content panel with the button grid 
+  Just resets the Thumbnail back to loading
 */
-function displayReliefGrid() {
+function resetDisplay() {
   $("#thumbnail").attr('src', 'images/gear.svg');
   $("#thumbnail").css('width', '');
   $("#thumbnail").css('height', '');
+  $("#overlay").attr('src', '');
+}
+
+/*
+  UI transitions to show the main content panel with the button grid 
+*/
+function displayReliefGrid() {
+  resetDisplay();
+
   $(".content-display").hide();
   $(".content-main").show();
   $("#content-title").text('All');
+}
+
+function isCatApi(str) {
+  return (str == 'parse-thecatapi');
 }
 
 /*
   UI transitions to show the display panel with the comic thumbnail
 */
 function displayRelief(btnId, btnTitle, getRandom, randomable) {
+  resetDisplay();
+  
   $(".content-main").hide();
   $("#content-title").text(btnTitle);
   $(".content-display").data('data-displayed-id', btnId);
   $(".content-display").show();
   $("#retrieve-random").prop('disabled', (!randomable) );
 
-  parseComic(xmlParseAttributes[btnId], btnTitle, getRandom, 500);
+  if (isCatApi(btnId)) {
+    loadImage(catApiSrc, btnTitle, 250);
+  } else {
+    parseComic(xmlParseAttributes[btnId], btnTitle, getRandom, 500);
+  }
 }
 
 /*
@@ -139,10 +161,16 @@ function displayRandomRelief() {
   parses random comic for the same comic as currently on display
 */
 function displayRandomComicForCurrentRelief() {
+  resetDisplay();
+
   var currentId = $(".content-display").data('data-displayed-id');
   var currentTitle = $("#content-title").text();
 
-  parseComic(xmlParseAttributes[currentId], currentTitle, true, 250);
+  if (isCatApi(currentId)) {
+    loadImage(catApiSrc, currentTitle, 250);
+  } else {
+    parseComic(xmlParseAttributes[currentId], currentTitle, true, 250);
+  }
 }
 
 $(document).ready( function() {
