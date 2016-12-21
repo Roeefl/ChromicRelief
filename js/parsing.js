@@ -146,7 +146,7 @@ function displayRandomRelief() {
 
   // get the retrieveRandom option from settings, but if the randomly selected relief does not offer the option
   // to parse a random comic, select latest one instead
-  var getRandom = $("#cmn-toggle-1").is(':checked');
+  var getRandom = true;
   var randomable = xmlParseAttributes[chosenParseObjId]['randomable'];
 
   if (!randomable) {
