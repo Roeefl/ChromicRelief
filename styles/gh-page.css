@@ -126,13 +126,18 @@ a.pure-button-primary {
 .home-menu a {
     color: #6FBEF3;
 }
+
+.home-menu li {
+    margin-top: 6px;
+}
+/*
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
     border: none;
     color: #AECFE5;
 }
-
+*/
 
 /*
  * -- SPLASH STYLES --
