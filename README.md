@@ -11,6 +11,8 @@
 	a Google Chrome Extension aimed at keeping developers from going insane while working long days and nights
 </h3>
 
+<h4>Get the <a href='https://chrome.google.com/webstore/detail/chromicrelief/diejieodlkkigdaeaiinlajimeiepfce' target='_blank'>extension from Chrome Web Store</a></h4>
+
 <ul>
     <li>
         <p>Lightweight, minimal extension</p>
