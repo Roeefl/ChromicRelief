@@ -12,17 +12,6 @@
     "default_title": "Chromic Relief"
   },
 
-  // "commands": {
-  //   "escape-view": {
-  //     "suggested_key": {
-  //       "default": "Esc",
-  //       "mac": "Esc"
-  //     },
-  //     "description": "Go one view back in the extention instead of closing it.",
-  //     "global": true
-  //   }
-  // },
-
   "permissions": [
     "tabs",
     "activeTab",
