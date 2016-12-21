@@ -1,59 +1,155 @@
 <!doctype html>
-
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  <title>ChromicRelief</title>
-
-  <meta name="description" content="ChromicRelief">
-  <meta name="author" content="Roeefl">
+  	<meta name="author" content="Roeefl">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChromicRelief Chrome Extnesion">
+    <title>ChromicRelief</title>
+    
+    <!-- PureCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
+    
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    
+    <!-- Font-AWesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="styles/gh-page.css">
+        <!--<![endif]-->
 </head>
-
 <body>
-  <h1>
-	<a href=''>
-		ChromicRelief
-	</a>
-</h1>
 
-<h2>
-	Get a quick spike of comic relief on Chrome without even having to leave your current tab, and get back to work
-</h2>
-<h3>
-	a Google Chrome Extension aimed at keeping developers from going insane while working long days and nights
-</h3>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">
+        	<img class="pure-menu-heading-icon" alt="Extention Icon" class="pure-img-responsive" src="images/icon32.png">
+        	<span class="pure-menu-heading-text">ChromicRelief</span>
+    	</a>
 
-<ul>
-    <li>
-        <p>Lightweight, minimal extension</p>
-    </li>
-    <li>
-        <p>Developed using <a href='https://angular.io/' target="_blank">AngularJS</a> and <a href='http://purecss.io/' target="_blank">PureCSS</a></p>
-    </li>
-    <li>
-    	<p>Clear, clean code with minimal comments</p>
-	</li>
-</ul>
+        <!-- <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tour</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sign Up</a></li>
+        </ul> -->
+    </div>
+</div>
 
-<h3>
-	Credits:
-</h3>
-<ul>
-	<li>
-		<p><a href='http://iconscout.com' target="_blank">Iconscout</a> for the extension icon</p>
-	</li>
-	<li>
-		<p><a href='http://loading.io' target="_blank">loading.io</a> for the loading screen gif</p>
-	</li>
-	<li>
-		<p><a href='https://github.com/gsklee/ngStorage/' target="_blank">ngStorage</a> for local storage</p>
-	</li>
-</ul>
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">ChromicRelief</h1>
+        <p class="splash-subhead">
+            A Chrome extention for viewing web comics conveniently
+        </p>
+        <p>
+            <a href="https://chrome.google.com/webstore/detail/chromicrelief/diejieodlkkigdaeaiinlajimeiepfce" target="_blank" class="pure-button pure-button-primary">Add to Chrome</a>
+        </p>
+    </div>
+</div>
 
-<div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">It's just a fucking web comic viewer</h2>
+
+        <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                <h3 class="content-subhead">
+                    <i class="fa fa-rocket"></i>
+                    Dreadful Loading Time
+                </h3>
+                <p>
+                    You'll probably remove it from Chrome before the first comic loads
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-mobile"></i>
+                    Shitty Interface
+                </h3>
+                <p>
+                    Giving a backend guy control of anything's UI is a big mistake
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-paw"></i>
+                    Has Cats
+                </h3>
+                <p>
+                    People usually like cats, so I added some in addition to the web comics
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-check-square-o"></i>
+                   	Never Updates
+                </h3>
+                <p>
+                    I just wanted to fiddle around with chrome extensions for a one day. I'm never, ever gonna update this extention with new features
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+            <img width="300" alt="promotional" class="pure-img-responsive" src="images/daredevil.png">
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+            <h2 class="content-head content-head-ribbon">Here's a promotional image of a random comic book character</h2>
+
+            <p>
+                I have no idea who this guy is, but he's got red mask and horns. that's pretty cool.
+            </p>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2 class="content-head is-center">I really have nothing left to say</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+
+                        <label for="name">Your Name</label>
+                        <input id="name" type="text" placeholder="Your Name">
 
 
+                        <label for="email">Your Email</label>
+                        <input id="email" type="email" placeholder="Your Email">
 
-</body>
-</html>
+                        <!-- <label for="password">Your Password</label>
+                        <input id="password" type="password" placeholder="Your Password">-->
+
+                        <button type="submit" class="pure-button">Don't click me. I don't do anything</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h4>Contact Me</h4>
+                <p>
+					If you have some invaluable input about the extension, send me an <a href="mailto:roeefl@gmail.com" class="">Email</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer l-box is-center">
+     	Made by <a href='https://github.com/Roeefl/' target='_blank'>Roeefl</a> with tea and tissues while sick as shit in Sofia, Bulgaria
+    </div>
+
+</div>
