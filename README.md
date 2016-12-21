@@ -11,7 +11,11 @@
 	a Google Chrome Extension aimed at keeping developers from going insane while working long days and nights
 </h3>
 
-<h4>Get the <a href='https://chrome.google.com/webstore/detail/chromicrelief/diejieodlkkigdaeaiinlajimeiepfce' target='_blank'>extension from Chrome Web Store</a></h4>
+<h2>Get the <a href='https://chrome.google.com/webstore/detail/chromicrelief/diejieodlkkigdaeaiinlajimeiepfce' target='_blank'>extension from Chrome Web Store</a></h2>
+
+<h2>And here is the github page for the extention: <a href='https://roeefl.github.io/ChromicRelief/'>https://roeefl.github.io/ChromicRelief/</a></h2>
+
+<
 
 <ul>
     <li>
