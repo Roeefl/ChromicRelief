@@ -127,19 +127,19 @@
                             relief does not allow access to random comic
                     -->
                     <button
-                        ng-repeat="relief in reliefList | orderBy: 'alt' "
-                        class="relief-button pure-button hvr-glow"
-                        id={{relief.id}}
-                        title={{relief.alt}}
-                        ng-click="setAllowRandom(relief.allowRandom)"
-                        ng-show="(filters.category ? filters.category == relief.category : true)"
-                        ng-disabled="$storage.retrieveRandom ? {{!relief.allowRandom}} : false" >
+                      ng-repeat="relief in reliefList | orderBy: 'alt' "
+                      class="relief-button pure-button hvr-glow"
+                      id={{relief.id}}
+                      title={{relief.alt}}
+                      ng-click="setAllowRandom(relief.allowRandom)"
+                      ng-show="(filters.category ? filters.category == relief.category : true)"
+                      ng-disabled="$storage.retrieveRandom ? {{!relief.allowRandom}} : false" >
                         <img
-                            width="48"
-                            height="48"
-                            alt={{relief.alt}}
-                            class="relief-button-img"
-                            ng-src="images/grid/{{relief.src}}.png" >
+                        width="48"
+                        height="48"
+                        alt={{relief.alt}}
+                        class="relief-button-img"
+                        ng-src="images/grid/{{relief.src}}.png" >
                     </button>   
 
                 </div>
